@@ -1,5 +1,6 @@
 run: output
-	@trap 'make clean' SIGINT; ./output; make clean
+	./output
+	make clean
 
 output: lex.yy.c y.tab.c
 	gcc lex.yy.c y.tab.c -o output

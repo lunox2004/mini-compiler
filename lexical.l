@@ -10,6 +10,7 @@ NUMBER [0-9]+
 
 %%
 "print"  {return print;}
+"integer" {return integer;}
 {NUMBER} {yylval.num = atoi(yytext); return number;}
 {IDENTIFIER} {return identifier;}
 "(" {return left_brace;}
