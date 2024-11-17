@@ -1,4 +1,5 @@
 %{
+    #include "y.tab.h"
     #include <stdio.h>
     int yylex(void);
     int yyerror(const char *s);
@@ -6,7 +7,7 @@
 %}
 
 %start line
-%token print left_brace right_brace equal_to number
+%token print left_brace right_brace equal_to number identifier
 
 %%
 

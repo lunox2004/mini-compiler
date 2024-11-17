@@ -1,6 +1,6 @@
 %{
 #include <stdio.h>
-#include <y.tab.h>
+#include "y.tab.h"
 
 %}
 
@@ -17,10 +17,6 @@ IDENTIFIER {return identifier;}
 .+ {}
 
 %%
-yywrap(){
-    return 0;
-}
-int main(){
-    yylex();
-    return 0;
+yywrap(void){
+    return 1;
 }
