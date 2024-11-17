@@ -7,7 +7,11 @@
 %}
 
 %start line
-%token print left_brace right_brace equal_to number identifier
+%token print left_brace right_brace equal_to identifier
+%token <num> number
+%union{
+    int num;
+}
 
 %%
 
@@ -23,10 +27,8 @@ int main()
 {
 
     yyparse();
-
-/*    if(success)
-
-     printf("Parsing Successful\n");*/
+    if(success)
+        printf("Parsing Successful\n");
 
     return 0;
 
